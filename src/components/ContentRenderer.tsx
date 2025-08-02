@@ -3,7 +3,10 @@ import { Copy, Check, ExternalLink } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Badge } from '@/components/ui/badge'
-import { DocumentationSection } from '../data-temp/documentation'
+import { DocumentationSection } from '../data/multilingualDocumentation'
+import { InteractiveQuiz } from './InteractiveQuiz'
+import { LanguagePreview } from './LanguagePreview'
+import { useTranslation } from '@/hooks/useTranslation'
 import { toast } from 'sonner'
 
 interface ContentRendererProps {
@@ -13,12 +16,13 @@ interface ContentRendererProps {
 
 export function ContentRenderer({ content }: ContentRendererProps) {
   const [copiedCode, setCopiedCode] = useState<string | null>(null)
+  const { currentLanguage, t } = useTranslation()
 
   const copyToClipboard = async (text: string, id: string) => {
     try {
       await navigator.clipboard.writeText(text)
       setCopiedCode(id)
-      toast.success('Code copied to clipboard!')
+      toast.success(t('content.copied'))
       setTimeout(() => setCopiedCode(null), 2000)
     } catch (err) {
       toast.error('Failed to copy code')
@@ -52,6 +56,7 @@ export function ContentRenderer({ content }: ContentRendererProps) {
                 variant="outline"
                 className="copy-button absolute top-2 right-2"
                 onClick={() => copyToClipboard(text, codeId)}
+                title={t('content.copyCode')}
               >
                 {copiedCode === codeId ? (
                   <Check className="h-4 w-4 text-green-600" />
@@ -62,11 +67,72 @@ export function ContentRenderer({ content }: ContentRendererProps) {
             </div>
           )
         } else {
-          elements.push(
-            <div key={elements.length} dangerouslySetInnerHTML={{ 
-              __html: parseSimpleMarkdown(text) 
-            }} />
-          )
+          // Handle custom components with a simpler approach
+          if (text.includes('<InteractiveQuiz />') || text.includes('<LanguagePreview />')) {
+            const parts = text
+              .split('<InteractiveQuiz />')
+              .flatMap(part => part.split('<LanguagePreview />'))
+              .map((part, index) => {
+                // Check what component should come before this text part
+                const originalText = text
+                const beforeQuiz = originalText.split('<InteractiveQuiz />')[0]
+                const beforePreview = originalText.split('<LanguagePreview />')[0]
+                
+                if (index === 0) {
+                  return { type: 'text', content: part }
+                } else {
+                  // Determine which component should be inserted based on position
+                  const precedingText = parts.slice(0, index).reduce((acc, p) => acc + (p.content || ''), '')
+                  if (originalText.indexOf('<InteractiveQuiz />') > -1 && 
+                      precedingText.length >= beforeQuiz.length && 
+                      precedingText.length < beforeQuiz.length + '<InteractiveQuiz />'.length) {
+                    return { type: 'quiz', content: part }
+                  } else if (originalText.indexOf('<LanguagePreview />') > -1 && 
+                             precedingText.length >= beforePreview.length) {
+                    return { type: 'preview', content: part }
+                  }
+                  return { type: 'text', content: part }
+                }
+              })
+
+            // Simple split approach
+            let content = text
+            const elements_local: JSX.Element[] = []
+            
+            if (content.includes('<LanguagePreview />')) {
+              const [before, after] = content.split('<LanguagePreview />')
+              if (before.trim()) {
+                elements_local.push(<div key="before-preview" dangerouslySetInnerHTML={{ __html: parseSimpleMarkdown(before) }} />)
+              }
+              elements_local.push(<div key="language-preview" className="my-6"><LanguagePreview /></div>)
+              content = after
+            }
+            
+            if (content.includes('<InteractiveQuiz />')) {
+              const [before, after] = content.split('<InteractiveQuiz />')
+              if (before.trim()) {
+                elements_local.push(<div key="before-quiz" dangerouslySetInnerHTML={{ __html: parseSimpleMarkdown(before) }} />)
+              }
+              elements_local.push(<div key="interactive-quiz" className="my-8"><InteractiveQuiz /></div>)
+              if (after.trim()) {
+                elements_local.push(<div key="after-quiz" dangerouslySetInnerHTML={{ __html: parseSimpleMarkdown(after) }} />)
+              }
+            } else if (content.trim()) {
+              elements_local.push(<div key="remaining" dangerouslySetInnerHTML={{ __html: parseSimpleMarkdown(content) }} />)
+            }
+            
+            elements.push(
+              <div key={elements.length} className="space-y-4">
+                {elements_local}
+              </div>
+            )
+          } else {
+            elements.push(
+              <div key={elements.length} dangerouslySetInnerHTML={{ 
+                __html: parseSimpleMarkdown(text) 
+              }} />
+            )
+          }
         }
         currentElement = []
       }
@@ -130,12 +196,20 @@ export function ContentRenderer({ content }: ContentRendererProps) {
             Workshop Documentation
           </Badge>
           <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>Section: {content.title}</span>
+            <span>Section: {
+              typeof content.title === 'string' 
+                ? content.title 
+                : content.title[currentLanguage] || content.title.en
+            }</span>
             <ExternalLink className="h-3 w-3" />
           </div>
         </div>
         
-        {renderMarkdown(content.content)}
+        {renderMarkdown(
+          typeof content.content === 'string' 
+            ? content.content 
+            : content.content[currentLanguage] || content.content.en
+        )}
       </article>
     </ScrollArea>
   )

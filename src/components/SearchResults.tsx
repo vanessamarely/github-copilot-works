@@ -5,7 +5,8 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { DocumentationSection } from '../data-temp/documentation'
+import { DocumentationSection } from '../data/multilingualDocumentation'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface SearchResult {
   section: DocumentationSection
@@ -22,6 +23,7 @@ interface SearchResultsProps {
 export function SearchResults({ query, documentation, onSectionChange }: SearchResultsProps) {
   const [results, setResults] = useState<SearchResult[]>([])
   const [isLoading, setIsLoading] = useState(false)
+  const { currentLanguage, t } = useTranslation()
 
   useEffect(() => {
     if (!query.trim()) {
@@ -49,14 +51,23 @@ export function SearchResults({ query, documentation, onSectionChange }: SearchR
       const matches: string[] = []
       let score = 0
 
+      // Get title and content in current language
+      const title = typeof section.title === 'string' 
+        ? section.title 
+        : section.title[currentLanguage] || section.title.en
+      
+      const content = typeof section.content === 'string' 
+        ? section.content 
+        : section.content[currentLanguage] || section.content.en
+
       // Search in title
-      if (section.title.toLowerCase().includes(lowercaseQuery)) {
-        matches.push(`Title: ${section.title}`)
+      if (title.toLowerCase().includes(lowercaseQuery)) {
+        matches.push(`${t('search.foundIn')} ${title}`)
         score += 10
       }
 
       // Search in content
-      const contentLines = section.content.split('\n')
+      const contentLines = content.split('\n')
       contentLines.forEach((line, index) => {
         if (line.toLowerCase().includes(lowercaseQuery)) {
           // Get context around the match
@@ -139,7 +150,7 @@ export function SearchResults({ query, documentation, onSectionChange }: SearchR
         <p className="text-muted-foreground">
           {isLoading 
             ? 'Searching...' 
-            : `Found ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`
+            : `${t('search.foundIn')} ${results.length} result${results.length !== 1 ? 's' : ''} for "${query}"`
           }
         </p>
       </div>
@@ -168,7 +179,12 @@ export function SearchResults({ query, documentation, onSectionChange }: SearchR
                   <div className="flex items-center gap-2">
                     <FileText className="h-5 w-5 text-primary" />
                     <h3 className="text-lg font-semibold">
-                      {highlightMatch(result.section.title, query)}
+                      {highlightMatch(
+                        typeof result.section.title === 'string' 
+                          ? result.section.title 
+                          : result.section.title[currentLanguage] || result.section.title.en,
+                        query
+                      )}
                     </h3>
                   </div>
                   <Badge variant="secondary">
@@ -198,7 +214,7 @@ export function SearchResults({ query, documentation, onSectionChange }: SearchR
       ) : (
         <div className="text-center py-12">
           <Search className="mx-auto h-12 w-12 text-muted-foreground mb-4" />
-          <h3 className="text-lg font-semibold mb-2">No results found</h3>
+          <h3 className="text-lg font-semibold mb-2">{t('search.noResults')}</h3>
           <p className="text-muted-foreground mb-4">
             Try searching with different keywords or browse the documentation using the sidebar.
           </p>

@@ -3,7 +3,8 @@ import { ChevronRight, ChevronDown, FileText } from '@phosphor-icons/react'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { DocumentationSection } from '../data-temp/documentation'
+import { DocumentationSection } from '../data/multilingualDocumentation'
+import { useTranslation } from '@/hooks/useTranslation'
 
 interface SidebarProps {
   activeSection: string
@@ -13,6 +14,7 @@ interface SidebarProps {
 
 export function Sidebar({ activeSection, onSectionChange, documentation }: SidebarProps) {
   const [expandedSections, setExpandedSections] = useState<Set<string>>(new Set())
+  const { currentLanguage } = useTranslation()
 
   const toggleSection = (sectionId: string) => {
     const newExpanded = new Set(expandedSections)
@@ -28,6 +30,11 @@ export function Sidebar({ activeSection, onSectionChange, documentation }: Sideb
     const isActive = activeSection === section.id
     const isExpanded = expandedSections.has(section.id)
     const hasSubsections = section.subsections && section.subsections.length > 0
+    
+    // Get title in current language
+    const title = typeof section.title === 'string' 
+      ? section.title 
+      : section.title[currentLanguage] || section.title.en
 
     return (
       <div key={section.id}>
@@ -42,7 +49,7 @@ export function Sidebar({ activeSection, onSectionChange, documentation }: Sideb
           )}
         >
           <FileText className="mr-2 h-4 w-4 flex-shrink-0" />
-          <span className="flex-1">{section.title}</span>
+          <span className="flex-1">{title}</span>
           {hasSubsections && (
             <Button
               variant="ghost"
