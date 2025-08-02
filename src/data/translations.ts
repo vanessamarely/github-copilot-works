@@ -16,6 +16,7 @@ export interface TranslationKeys {
     usage: string
     bestPractices: string
     troubleshooting: string
+    cheatSheet: string
     exercises: string
   }
   search: {
@@ -70,6 +71,7 @@ export const translations: Translations = {
       usage: "Using GitHub Copilot",
       bestPractices: "Best Practices",
       troubleshooting: "Troubleshooting & FAQ",
+      cheatSheet: "Cheat Sheet",
       exercises: "Exercises & Challenges"
     },
     search: {
@@ -122,6 +124,7 @@ export const translations: Translations = {
       usage: "Uso de GitHub Copilot",
       bestPractices: "Mejores Prácticas",
       troubleshooting: "Solución de Problemas y FAQ",
+      cheatSheet: "Hoja de Referencia",
       exercises: "Ejercicios y Desafíos"
     },
     search: {

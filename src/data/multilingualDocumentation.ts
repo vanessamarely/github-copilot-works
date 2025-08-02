@@ -1229,6 +1229,609 @@ code --list-extensions --show-versions | grep copilot
     }
   },
   {
+    id: 'cheat-sheet',
+    title: {
+      en: 'GitHub Copilot Cheat Sheet',
+      es: 'Hoja de Referencia de GitHub Copilot'
+    },
+    content: {
+      en: `# GitHub Copilot Cheat Sheet
+
+Quick reference guide for GitHub Copilot shortcuts, commands, and essential tips.
+
+## 🚀 Essential Shortcuts & Commands
+
+### Code Completion
+| Action | Shortcut | Description |
+|--------|----------|-------------|
+| **Accept suggestion** | \`Tab\` | Accept the entire inline suggestion |
+| **Accept word** | \`Ctrl+→\` / \`Cmd+→\` | Accept suggestion word by word |
+| **Dismiss suggestion** | \`Esc\` | Reject current suggestion |
+| **Next suggestion** | \`Alt+]\` / \`Option+]\` | Cycle to next suggestion |
+| **Previous suggestion** | \`Alt+[\` / \`Option+[\` | Cycle to previous suggestion |
+| **Multiple suggestions** | \`Ctrl+Enter\` / \`Cmd+Enter\` | Open suggestions panel |
+
+### GitHub Copilot Chat
+| Action | Shortcut | Description |
+|--------|----------|-------------|
+| **Open chat** | \`Ctrl+Shift+I\` / \`Cmd+Shift+I\` | Open Copilot chat panel |
+| **Quick chat** | \`Ctrl+I\` / \`Cmd+I\` | Inline chat in editor |
+| **Explain code** | \`/explain\` | Ask Copilot to explain selected code |
+| **Fix errors** | \`/fix\` | Ask Copilot to fix code issues |
+| **Generate tests** | \`/tests\` | Generate unit tests for code |
+| **Optimize code** | \`/optimize\` | Suggest performance improvements |
+
+### Command Palette Actions
+Press \`Ctrl+Shift+P\` (Windows/Linux) or \`Cmd+Shift+P\` (Mac), then type:
+
+| Command | Function |
+|---------|----------|
+| \`GitHub Copilot: Enable\` | Enable Copilot suggestions |
+| \`GitHub Copilot: Disable\` | Disable Copilot suggestions |
+| \`GitHub Copilot: Toggle\` | Quick toggle on/off |
+| \`GitHub Copilot: Sign Out\` | Sign out of GitHub account |
+| \`GitHub Copilot: Check Usage\` | View usage statistics (Free tier) |
+
+## 💡 Writing Effective Prompts
+
+### Comment Patterns That Work
+\`\`\`javascript
+// ✅ GOOD: Specific and descriptive
+// Function to validate email address using RFC 5322 standard
+function validateEmail(email) {
+    // Copilot provides accurate regex implementation
+}
+
+// ✅ GOOD: Include context and constraints
+// Sort array of products by price (ascending) and handle null values
+function sortProductsByPrice(products) {
+    // Implementation appears here
+}
+
+// ❌ AVOID: Vague or too brief
+// sort function
+function sort(arr) {
+    // Poor context leads to generic suggestions
+}
+\`\`\`
+
+### Function Signature Patterns
+\`\`\`typescript
+// ✅ GOOD: Clear types and purpose
+interface User {
+    id: string;
+    email: string;
+    lastLogin: Date;
+}
+
+// Find users who haven't logged in for specified days
+function findInactiveUsers(users: User[], daysSinceLogin: number): User[] {
+    // Copilot understands the full context
+}
+
+// ✅ GOOD: Error handling context
+// Fetch user data with retry logic and timeout handling
+async function fetchUserWithRetry(userId: string, maxRetries = 3): Promise<User> {
+    // Robust implementation with error handling
+}
+\`\`\`
+
+## 🏷️ Language-Specific Tips
+
+### JavaScript/TypeScript
+\`\`\`javascript
+// Use JSDoc for better suggestions
+/**
+ * Calculate monthly payment for a loan
+ * @param {number} principal - Loan amount
+ * @param {number} rate - Annual interest rate (as decimal)
+ * @param {number} years - Loan term in years
+ * @returns {number} Monthly payment amount
+ */
+function calculateMonthlyPayment(principal, rate, years) {
+    // Copilot provides accurate financial calculation
+}
+
+// Leverage modern JavaScript patterns
+// Create debounced search function for API calls
+const debouncedSearch = debounce((query) => {
+    // API search logic
+}, 300);
+\`\`\`
+
+### Python
+\`\`\`python
+# Use type hints for better suggestions
+from typing import List, Dict, Optional
+
+def analyze_sales_data(
+    sales: List[Dict[str, float]], 
+    period: str = "monthly"
+) -> Dict[str, float]:
+    """
+    Analyze sales data and return key metrics.
+    Handles missing data and calculates trends.
+    """
+    # Copilot provides comprehensive data analysis
+    pass
+
+# Data science context helps
+import pandas as pd
+import numpy as np
+
+# Clean dataset by removing outliers using IQR method
+def remove_outliers_iqr(df: pd.DataFrame, column: str) -> pd.DataFrame:
+    # Statistical outlier removal implementation
+    pass
+\`\`\`
+
+### React Components
+\`\`\`tsx
+// Provide component context and props interface
+interface ProductCardProps {
+    product: {
+        id: string;
+        name: string;
+        price: number;
+        imageUrl: string;
+    };
+    onAddToCart: (productId: string) => void;
+}
+
+// Interactive product card with image, price, and add to cart button
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+    // Copilot creates complete component with proper JSX
+    return (
+        // Component JSX here
+    );
+};
+\`\`\`
+
+## 🔧 Configuration Tips
+
+### VS Code Settings
+Add to your \`settings.json\`:
+\`\`\`json
+{
+    // Enable/disable inline suggestions
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false
+    },
+    
+    // Control suggestion trigger
+    "github.copilot.inlineSuggest.enable": true,
+    
+    // Language-specific settings
+    "github.copilot.autocomplete.enable": true
+}
+\`\`\`
+
+### File-level Control
+\`\`\`javascript
+// Disable Copilot for specific file
+// copilot:disable
+
+// Enable only for this file (if globally disabled)
+// copilot:enable
+\`\`\`
+
+## ⚡ Free Tier Optimization (2025)
+
+### Smart Usage Strategies
+- **Monitor Usage**: Check status bar for remaining completions/chats
+- **Quality over Quantity**: Use for complex logic, skip simple syntax
+- **Batch Questions**: Ask comprehensive chat questions vs. multiple small ones
+- **Plan Timing**: Save usage for challenging tasks and deadlines
+
+### Chat Efficiency
+\`\`\`
+❌ Inefficient:
+"How do I declare a variable?"
+"What's a function?"
+"How to use if statements?"
+
+✅ Efficient:
+"Explain the best practices for variable naming, function organization, and control flow patterns in JavaScript for a React application. Include examples."
+\`\`\`
+
+## 🛡️ Security & Best Practices
+
+### Always Review These Areas
+- [ ] Authentication and authorization logic
+- [ ] Input validation and sanitization  
+- [ ] Database queries and SQL injection prevention
+- [ ] API key and secret management
+- [ ] Error handling that might leak information
+
+### Code Quality Checklist
+- [ ] Understand what the suggested code does
+- [ ] Verify it matches your coding standards
+- [ ] Test edge cases and error scenarios
+- [ ] Check performance implications
+- [ ] Ensure proper error handling
+
+## 🎯 Common Use Cases
+
+### API Integration
+\`\`\`javascript
+// REST API client with error handling and retry logic
+class APIClient {
+    constructor(baseURL, apiKey) {
+        this.baseURL = baseURL;
+        this.apiKey = apiKey;
+    }
+    
+    // GET request with authentication and error handling
+    async get(endpoint, params = {}) {
+        // Copilot suggests fetch implementation
+    }
+}
+\`\`\`
+
+### Data Processing
+\`\`\`python
+# Process CSV file and generate analytics report
+def generate_analytics_report(csv_file_path: str) -> Dict[str, Any]:
+    """
+    Read CSV, clean data, calculate metrics, and export results.
+    Handles missing values and data type conversion.
+    """
+    # Comprehensive data processing pipeline
+    pass
+\`\`\`
+
+### Form Validation
+\`\`\`javascript
+// Comprehensive form validation with real-time feedback
+const FormValidator = {
+    // Validate email with multiple checks
+    email: (value) => {
+        // Email validation logic
+    },
+    
+    // Strong password requirements
+    password: (value) => {
+        // Password strength validation
+    },
+    
+    // Credit card validation using Luhn algorithm
+    creditCard: (number) => {
+        // Credit card validation
+    }
+};
+\`\`\`
+
+## 🚨 Troubleshooting Quick Fixes
+
+| Problem | Quick Solution |
+|---------|----------------|
+| No suggestions appearing | \`Ctrl+Shift+P\` → "GitHub Copilot: Enable" |
+| Authentication error | \`Ctrl+Shift+P\` → "GitHub Copilot: Sign Out" → Sign back in |
+| Hit free tier limit | Upgrade to paid plan or wait for monthly reset |
+| Poor suggestion quality | Add more context with comments and type annotations |
+| Slow suggestions | Check internet connection, close unused VS Code tabs |
+
+## 📊 Productivity Metrics to Track
+
+### During Free Trial/Evaluation
+- **Lines of code written per hour**
+- **Time spent on debugging vs. new feature development** 
+- **Code quality metrics** (test coverage, complexity)
+- **Learning acceleration** for new languages/frameworks
+- **Documentation writing speed**
+
+### ROI Calculation
+\`\`\`
+Monthly time saved (hours) × Hourly rate ($) = Value generated
+Compare to subscription cost: $10/month Individual
+Break-even: ~1 hour saved per month at $10/hour rate
+\`\`\`
+
+---
+
+> 💡 **Pro Tip**: The best way to master Copilot is through consistent daily use. Start with simple tasks and gradually work up to complex challenges. Remember: Copilot is a powerful assistant, but you remain the architect of your code.`,
+      es: `# Hoja de Referencia de GitHub Copilot
+
+Guía de referencia rápida para atajos, comandos y consejos esenciales de GitHub Copilot.
+
+## 🚀 Atajos y Comandos Esenciales
+
+### Completado de Código
+| Acción | Atajo | Descripción |
+|--------|-------|-------------|
+| **Aceptar sugerencia** | \`Tab\` | Acepta toda la sugerencia en línea |
+| **Aceptar palabra** | \`Ctrl+→\` / \`Cmd+→\` | Acepta la sugerencia palabra por palabra |
+| **Descartar sugerencia** | \`Esc\` | Rechaza la sugerencia actual |
+| **Siguiente sugerencia** | \`Alt+]\` / \`Option+]\` | Cicla a la siguiente sugerencia |
+| **Sugerencia anterior** | \`Alt+[\` / \`Option+[\` | Cicla a la sugerencia anterior |
+| **Múltiples sugerencias** | \`Ctrl+Enter\` / \`Cmd+Enter\` | Abre panel de sugerencias |
+
+### Chat de GitHub Copilot
+| Acción | Atajo | Descripción |
+|--------|-------|-------------|
+| **Abrir chat** | \`Ctrl+Shift+I\` / \`Cmd+Shift+I\` | Abre panel de chat de Copilot |
+| **Chat rápido** | \`Ctrl+I\` / \`Cmd+I\` | Chat en línea en el editor |
+| **Explicar código** | \`/explain\` | Pide a Copilot que explique el código seleccionado |
+| **Corregir errores** | \`/fix\` | Pide a Copilot que corrija problemas en el código |
+| **Generar pruebas** | \`/tests\` | Genera pruebas unitarias para el código |
+| **Optimizar código** | \`/optimize\` | Sugiere mejoras de rendimiento |
+
+### Acciones de Paleta de Comandos
+Presiona \`Ctrl+Shift+P\` (Windows/Linux) o \`Cmd+Shift+P\` (Mac), luego escribe:
+
+| Comando | Función |
+|---------|---------|
+| \`GitHub Copilot: Enable\` | Habilita sugerencias de Copilot |
+| \`GitHub Copilot: Disable\` | Deshabilita sugerencias de Copilot |
+| \`GitHub Copilot: Toggle\` | Activar/desactivar rápido |
+| \`GitHub Copilot: Sign Out\` | Cerrar sesión de cuenta de GitHub |
+| \`GitHub Copilot: Check Usage\` | Ver estadísticas de uso (Nivel gratuito) |
+
+## 💡 Escribiendo Prompts Efectivos
+
+### Patrones de Comentarios que Funcionan
+\`\`\`javascript
+// ✅ BUENO: Específico y descriptivo
+// Función para validar dirección de email usando estándar RFC 5322
+function validateEmail(email) {
+    // Copilot proporciona implementación precisa con regex
+}
+
+// ✅ BUENO: Incluye contexto y restricciones
+// Ordenar array de productos por precio (ascendente) y manejar valores null
+function sortProductsByPrice(products) {
+    // La implementación aparece aquí
+}
+
+// ❌ EVITAR: Vago o muy breve
+// función de ordenamiento
+function sort(arr) {
+    // Contexto pobre lleva a sugerencias genéricas
+}
+\`\`\`
+
+### Patrones de Firma de Función
+\`\`\`typescript
+// ✅ BUENO: Tipos claros y propósito
+interface User {
+    id: string;
+    email: string;
+    lastLogin: Date;
+}
+
+// Encontrar usuarios que no han iniciado sesión por días especificados
+function findInactiveUsers(users: User[], daysSinceLogin: number): User[] {
+    // Copilot entiende el contexto completo
+}
+
+// ✅ BUENO: Contexto de manejo de errores
+// Obtener datos de usuario con lógica de reintento y manejo de timeout
+async function fetchUserWithRetry(userId: string, maxRetries = 3): Promise<User> {
+    // Implementación robusta con manejo de errores
+}
+\`\`\`
+
+## 🏷️ Consejos Específicos por Lenguaje
+
+### JavaScript/TypeScript
+\`\`\`javascript
+// Usar JSDoc para mejores sugerencias
+/**
+ * Calcular pago mensual para un préstamo
+ * @param {number} principal - Monto del préstamo
+ * @param {number} rate - Tasa de interés anual (como decimal)
+ * @param {number} years - Plazo del préstamo en años
+ * @returns {number} Monto de pago mensual
+ */
+function calculateMonthlyPayment(principal, rate, years) {
+    // Copilot proporciona cálculo financiero preciso
+}
+
+// Aprovechar patrones modernos de JavaScript
+// Crear función de búsqueda con debounce para llamadas a API
+const debouncedSearch = debounce((query) => {
+    // Lógica de búsqueda en API
+}, 300);
+\`\`\`
+
+### Python
+\`\`\`python
+# Usar type hints para mejores sugerencias
+from typing import List, Dict, Optional
+
+def analyze_sales_data(
+    sales: List[Dict[str, float]], 
+    period: str = "monthly"
+) -> Dict[str, float]:
+    """
+    Analizar datos de ventas y retornar métricas clave.
+    Maneja datos faltantes y calcula tendencias.
+    """
+    # Copilot proporciona análisis de datos comprensivo
+    pass
+
+# El contexto de ciencia de datos ayuda
+import pandas as pd
+import numpy as np
+
+# Limpiar dataset removiendo outliers usando método IQR
+def remove_outliers_iqr(df: pd.DataFrame, column: str) -> pd.DataFrame:
+    # Implementación de remoción de outliers estadísticos
+    pass
+\`\`\`
+
+### Componentes React
+\`\`\`tsx
+// Proporcionar contexto de componente e interfaz de props
+interface ProductCardProps {
+    product: {
+        id: string;
+        name: string;
+        price: number;
+        imageUrl: string;
+    };
+    onAddToCart: (productId: string) => void;
+}
+
+// Tarjeta de producto interactiva con imagen, precio y botón agregar al carrito
+const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
+    // Copilot crea componente completo con JSX apropiado
+    return (
+        // JSX del componente aquí
+    );
+};
+\`\`\`
+
+## 🔧 Consejos de Configuración
+
+### Configuraciones de VS Code
+Agregar a tu \`settings.json\`:
+\`\`\`json
+{
+    // Habilitar/deshabilitar sugerencias en línea
+    "github.copilot.enable": {
+        "*": true,
+        "yaml": false,
+        "plaintext": false
+    },
+    
+    // Controlar activación de sugerencias
+    "github.copilot.inlineSuggest.enable": true,
+    
+    // Configuraciones específicas por lenguaje
+    "github.copilot.autocomplete.enable": true
+}
+\`\`\`
+
+### Control a Nivel de Archivo
+\`\`\`javascript
+// Deshabilitar Copilot para archivo específico
+// copilot:disable
+
+// Habilitar solo para este archivo (si está deshabilitado globalmente)
+// copilot:enable
+\`\`\`
+
+## ⚡ Optimización del Nivel Gratuito (2025)
+
+### Estrategias de Uso Inteligente
+- **Monitorear Uso**: Verificar barra de estado para completados/chats restantes
+- **Calidad sobre Cantidad**: Usar para lógica compleja, omitir sintaxis simple
+- **Preguntas en Lote**: Hacer preguntas comprensivas en chat vs. múltiples pequeñas
+- **Planificar Tiempo**: Guardar uso para tareas desafiantes y fechas límite
+
+### Eficiencia en Chat
+\`\`\`
+❌ Ineficiente:
+"¿Cómo declaro una variable?"
+"¿Qué es una función?"
+"¿Cómo usar declaraciones if?"
+
+✅ Eficiente:
+"Explica las mejores prácticas para nombres de variables, organización de funciones y patrones de flujo de control en JavaScript para una aplicación React. Incluye ejemplos."
+\`\`\`
+
+## 🛡️ Seguridad y Mejores Prácticas
+
+### Siempre Revisar Estas Áreas
+- [ ] Lógica de autenticación y autorización
+- [ ] Validación y sanitización de entrada
+- [ ] Consultas de base de datos y prevención de inyección SQL
+- [ ] Gestión de claves API y secretos
+- [ ] Manejo de errores que podrían filtrar información
+
+### Lista de Verificación de Calidad de Código
+- [ ] Entender qué hace el código sugerido
+- [ ] Verificar que coincida con tus estándares de codificación
+- [ ] Probar casos límite y escenarios de error
+- [ ] Verificar implicaciones de rendimiento
+- [ ] Asegurar manejo apropiado de errores
+
+## 🎯 Casos de Uso Comunes
+
+### Integración de API
+\`\`\`javascript
+// Cliente API REST con manejo de errores y lógica de reintento
+class APIClient {
+    constructor(baseURL, apiKey) {
+        this.baseURL = baseURL;
+        this.apiKey = apiKey;
+    }
+    
+    // Petición GET con autenticación y manejo de errores
+    async get(endpoint, params = {}) {
+        // Copilot sugiere implementación con fetch
+    }
+}
+\`\`\`
+
+### Procesamiento de Datos
+\`\`\`python
+# Procesar archivo CSV y generar reporte de analíticas
+def generate_analytics_report(csv_file_path: str) -> Dict[str, Any]:
+    """
+    Leer CSV, limpiar datos, calcular métricas y exportar resultados.
+    Maneja valores faltantes y conversión de tipos de datos.
+    """
+    # Pipeline comprensivo de procesamiento de datos
+    pass
+\`\`\`
+
+### Validación de Formularios
+\`\`\`javascript
+// Validación comprensiva de formularios con retroalimentación en tiempo real
+const FormValidator = {
+    // Validar email con múltiples verificaciones
+    email: (value) => {
+        // Lógica de validación de email
+    },
+    
+    // Requisitos de contraseña fuerte
+    password: (value) => {
+        // Validación de fortaleza de contraseña
+    },
+    
+    // Validación de tarjeta de crédito usando algoritmo de Luhn
+    creditCard: (number) => {
+        // Validación de tarjeta de crédito
+    }
+};
+\`\`\`
+
+## 🚨 Soluciones Rápidas de Problemas
+
+| Problema | Solución Rápida |
+|----------|-----------------|
+| No aparecen sugerencias | \`Ctrl+Shift+P\` → "GitHub Copilot: Enable" |
+| Error de autenticación | \`Ctrl+Shift+P\` → "GitHub Copilot: Sign Out" → Volver a iniciar sesión |
+| Límite de nivel gratuito alcanzado | Actualizar a plan pago o esperar reinicio mensual |
+| Calidad pobre de sugerencias | Agregar más contexto con comentarios y anotaciones de tipo |
+| Sugerencias lentas | Verificar conexión a internet, cerrar pestañas no usadas de VS Code |
+
+## 📊 Métricas de Productividad a Rastrear
+
+### Durante Prueba Gratuita/Evaluación
+- **Líneas de código escritas por hora**
+- **Tiempo gastado en depuración vs. desarrollo de nuevas características**
+- **Métricas de calidad de código** (cobertura de pruebas, complejidad)
+- **Aceleración de aprendizaje** para nuevos lenguajes/frameworks
+- **Velocidad de escritura de documentación**
+
+### Cálculo de ROI
+\`\`\`
+Tiempo ahorrado mensual (horas) × Tarifa por hora ($) = Valor generado
+Comparar con costo de suscripción: $10/mes Individual
+Punto de equilibrio: ~1 hora ahorrada por mes a tarifa de $10/hora
+\`\`\`
+
+---
+
+> 💡 **Consejo Pro**: La mejor manera de dominar Copilot es a través del uso diario consistente. Comienza con tareas simples y gradualmente trabaja hacia desafíos complejos. Recuerda: Copilot es un asistente poderoso, pero tú sigues siendo el arquitecto de tu código.`
+    },
+  },
+  {
     id: 'exercises',
     title: {
       en: 'Exercises & Challenges',
