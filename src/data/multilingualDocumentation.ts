@@ -3605,22 +3605,3 @@ D) Cambiar la extensión del archivo
     }
   }
 ]
-
-A) Presionar Tab múltiples veces
-B) Usar Ctrl+Enter (Cmd+Enter)
-C) Reiniciar VS Code
-D) Cambiar la extensión del archivo
-
-## Soluciones de Desafíos
-
-> **Nota**: ¡No veas las soluciones hasta que hayas intentado los ejercicios! El aprendizaje viene de trabajar con Copilot, no de leer código terminado.
-
-### Consejos Pro para Ejercicios
-
-1. **Empieza con comentarios**: Comentarios claros llevan a mejores sugerencias
-2. **Itera gradualmente**: Construye funciones complejas paso a paso
-3. **Prueba todo**: Siempre verifica que las sugerencias de Copilot funcionen correctamente
-4. **Aprende patrones**: Nota cómo Copilot responde a diferentes prompts`
-    }
-  }
-]
