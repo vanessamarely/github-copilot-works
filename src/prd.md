@@ -29,6 +29,16 @@ Users who primarily speak Spanish need access to quality GitHub Copilot document
 - **Why it matters**: Reduces friction for returning users
 - **Success criteria**: Language preference survives page refreshes and new sessions
 
+### Ethics of Data in GitHub Copilot Chapter
+- **What it does**: Provides comprehensive coverage of ethical considerations when using AI-assisted coding
+- **Why it matters**: Developers need to understand the responsible use of AI tools and data implications
+- **Success criteria**: Covers data sources, IP considerations, bias awareness, and responsible usage guidelines
+
+### Vibe Coding Chapter  
+- **What it does**: Introduces the concept of "vibe coding" - intuitive, flow-based programming with AI assistance
+- **Why it matters**: Helps developers understand creative collaboration with AI beyond just code completion
+- **Success criteria**: Explains philosophy, techniques, and practical examples of vibe coding approach
+
 ## Design Direction
 
 ### Visual Tone & Identity

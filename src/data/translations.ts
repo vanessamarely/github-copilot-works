@@ -17,6 +17,8 @@ export interface TranslationKeys {
     bestPractices: string
     troubleshooting: string
     cheatSheet: string
+    dataEthics: string
+    vibeCoding: string
     exercises: string
   }
   search: {
@@ -72,6 +74,8 @@ export const translations: Translations = {
       bestPractices: "Best Practices",
       troubleshooting: "Troubleshooting & FAQ",
       cheatSheet: "Cheat Sheet",
+      dataEthics: "Ethics of Data",
+      vibeCoding: "Vibe Coding",
       exercises: "Exercises & Challenges"
     },
     search: {
@@ -125,6 +129,8 @@ export const translations: Translations = {
       bestPractices: "Mejores Prácticas",
       troubleshooting: "Solución de Problemas y FAQ",
       cheatSheet: "Hoja de Referencia",
+      dataEthics: "Ética de Datos",
+      vibeCoding: "Vibe Coding",
       exercises: "Ejercicios y Desafíos"
     },
     search: {
