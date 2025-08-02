@@ -90,31 +90,48 @@ Understanding GitHub Copilot's licensing model is crucial before getting started
 - **Integration**: Deep integration with GitHub repositories
 - **Personalization**: Custom models trained on your organization's code
 
-### Free Tier Limitations and Considerations
+### GitHub Copilot Free in VS Code (2025 Update)
 
-**Important**: GitHub Copilot does not offer a permanent free tier. However, certain users may qualify for free access:
+**NEW: GitHub Copilot Free Tier in VS Code**
 
-- **Students**: Free access through GitHub Education Pack
-- **Open Source Maintainers**: Free access for verified maintainers of popular open source projects
-- **Free Trial**: 30-day trial for all new users
+In 2025, GitHub introduced a limited free tier specifically for VS Code users:
 
-**Token Usage and Rate Limits**:
-- GitHub Copilot doesn't use a traditional "token" system like other AI services
-- Instead, it operates on request-based limits to ensure fair usage
-- Heavy usage may be subject to rate limiting during peak times
-- Free trial users have the same technical capabilities as paid users during the trial period
+**Free Tier Features**:
+- **Monthly Completions**: 2,000 code completions per month
+- **Monthly Chat Interactions**: 50 chat interactions per month  
+- **VS Code Only**: Available exclusively in Visual Studio Code
+- **No Credit Card Required**: Sign up with just your GitHub account
+- **All Languages**: Support for all programming languages Copilot supports
 
-**What You Can Do During Free Trial**:
-✅ Generate code completions and suggestions  
-✅ Use Copilot Chat for code explanations  
-✅ Generate unit tests and documentation  
-✅ Access all supported programming languages  
-✅ Use in all supported IDEs  
+**Free Tier Limitations**:
+- **Usage Caps**: Hard limits on monthly completions and chat messages
+- **No Overflow**: No additional usage when limits are reached
+- **Single IDE**: Only works in VS Code, not other supported IDEs
+- **No CLI Access**: GitHub Copilot CLI not included
+- **No Enterprise Features**: No advanced security or admin controls
 
-**After Free Trial Expires**:
-❌ No access to any Copilot features without subscription  
-❌ No "freemium" model with limited daily usage  
-❌ Must subscribe to continue using any Copilot functionality  
+**What Happens When You Hit the Limit**:
+- ⚠️ Completions stop working until next month
+- ⚠️ Chat becomes unavailable until reset
+- ⚠️ No "pay-per-use" option to extend limits
+- ✅ Can upgrade to paid plan anytime for unlimited usage
+
+### Other Free Access Options
+
+**Students & Educators**: Free access through GitHub Education Pack
+- **Requirements**: Verified student or educator status
+- **Benefits**: Full GitHub Copilot Individual features
+- **Duration**: While maintaining eligible status
+
+**Open Source Maintainers**: Free access for qualifying projects
+- **Requirements**: Maintainer of popular open source repositories
+- **Verification**: GitHub reviews and approves applications
+- **Benefits**: Full GitHub Copilot Individual features
+
+**Traditional Free Trial**: 30-day trial for all new users
+- **Duration**: One-time 30-day trial
+- **Features**: Full access to all GitHub Copilot Individual features
+- **After Trial**: Must subscribe or switch to free tier (VS Code only)  
 
 Before we dive into the technical setup, let's understand what makes Copilot special:
 
@@ -189,31 +206,48 @@ Entender el modelo de licencias de GitHub Copilot es crucial antes de comenzar. 
 - **Integración**: Integración profunda con repositorios de GitHub
 - **Personalización**: Modelos personalizados entrenados en el código de tu organización
 
-### Limitaciones y Consideraciones del Nivel Gratuito
+### GitHub Copilot Gratuito en VS Code (Actualización 2025)
 
-**Importante**: GitHub Copilot no ofrece un nivel gratuito permanente. Sin embargo, ciertos usuarios pueden calificar para acceso gratuito:
+**NUEVO: Nivel Gratuito de GitHub Copilot en VS Code**
 
-- **Estudiantes**: Acceso gratuito a través del GitHub Education Pack
-- **Mantenedores de Código Abierto**: Acceso gratuito para mantenedores verificados de proyectos populares de código abierto
-- **Prueba Gratuita**: Prueba de 30 días para todos los nuevos usuarios
+En 2025, GitHub introdujo un nivel gratuito limitado específicamente para usuarios de VS Code:
 
-**Uso de Tokens y Límites de Velocidad**:
-- GitHub Copilot no usa un sistema tradicional de "tokens" como otros servicios de IA
-- En su lugar, opera con límites basados en solicitudes para asegurar un uso justo
-- El uso intensivo puede estar sujeto a limitación de velocidad durante horas pico
-- Los usuarios de prueba gratuita tienen las mismas capacidades técnicas que los usuarios de pago durante el período de prueba
+**Características del Nivel Gratuito**:
+- **Completados Mensuales**: 2,000 completados de código por mes
+- **Interacciones de Chat Mensuales**: 50 interacciones de chat por mes  
+- **Solo VS Code**: Disponible exclusivamente en Visual Studio Code
+- **Sin Tarjeta de Crédito**: Regístrate solo con tu cuenta de GitHub
+- **Todos los Lenguajes**: Soporte para todos los lenguajes de programación que Copilot admite
 
-**Lo Que Puedes Hacer Durante la Prueba Gratuita**:
-✅ Generar completados y sugerencias de código  
-✅ Usar Copilot Chat para explicaciones de código  
-✅ Generar pruebas unitarias y documentación  
-✅ Acceder a todos los lenguajes de programación soportados  
-✅ Usar en todos los IDEs soportados  
+**Limitaciones del Nivel Gratuito**:
+- **Límites de Uso**: Límites estrictos en completados mensuales y mensajes de chat
+- **Sin Sobrepaso**: Sin uso adicional cuando se alcanzan los límites
+- **IDE Único**: Solo funciona en VS Code, no en otros IDEs soportados
+- **Sin Acceso CLI**: GitHub Copilot CLI no incluido
+- **Sin Características Empresariales**: Sin controles avanzados de seguridad o administración
 
-**Después de que Expire la Prueba Gratuita**:
-❌ Sin acceso a ninguna característica de Copilot sin suscripción  
-❌ No hay modelo "freemium" con uso diario limitado  
-❌ Debes suscribirte para continuar usando cualquier funcionalidad de Copilot  
+**Qué Sucede Cuando Alcanzas el Límite**:
+- ⚠️ Los completados dejan de funcionar hasta el próximo mes
+- ⚠️ El chat se vuelve no disponible hasta el reinicio
+- ⚠️ No hay opción de "pago por uso" para extender límites
+- ✅ Puedes actualizar al plan pago en cualquier momento para uso ilimitado
+
+### Otras Opciones de Acceso Gratuito
+
+**Estudiantes y Educadores**: Acceso gratuito a través del GitHub Education Pack
+- **Requisitos**: Estado de estudiante o educador verificado
+- **Beneficios**: Características completas de GitHub Copilot Individual
+- **Duración**: Mientras mantengas el estado elegible
+
+**Mantenedores de Código Abierto**: Acceso gratuito para proyectos que califican
+- **Requisitos**: Mantenedor de repositorios populares de código abierto
+- **Verificación**: GitHub revisa y aprueba aplicaciones
+- **Beneficios**: Características completas de GitHub Copilot Individual
+
+**Prueba Gratuita Tradicional**: Prueba de 30 días para todos los nuevos usuarios
+- **Duración**: Prueba única de 30 días
+- **Características**: Acceso completo a todas las características de GitHub Copilot Individual
+- **Después de la Prueba**: Debes suscribirte o cambiar al nivel gratuito (solo VS Code)  
 
 Antes de sumergirnos en la configuración técnica, entendamos qué hace especial a Copilot:
 
@@ -239,21 +273,65 @@ Before setting up Copilot, ensure you have:
 - **Visual Studio Code**: Latest version installed
 - **Active Subscription**: GitHub Copilot subscription (free trial available)
 
-## Step 1: Install the GitHub Copilot Extension
+## Step 1: Choose Your Access Plan
+
+### Option A: GitHub Copilot Free (VS Code Only)
+
+**New in 2025**: Start with the free tier in VS Code:
+
+1. Open Visual Studio Code
+2. Go to Extensions (\`Ctrl+Shift+X\` or \`Cmd+Shift+X\`)
+3. Search for "GitHub Copilot"
+4. Install the extension
+5. Sign in with your GitHub account
+6. **No credit card required** - automatically get:
+   - 2,000 code completions per month
+   - 50 chat interactions per month
+
+**Free Tier Usage Tips**:
+- Monitor your usage in VS Code status bar
+- Prioritize complex code over simple completions
+- Use chat for learning and debugging rather than basic questions
+- Plan upgrade timing if you approach limits
+
+### Option B: Start Free Trial (All IDEs)
+
+For full access across all supported IDEs:
+
+1. Visit [github.com/copilot](https://github.com/copilot)
+2. Click "Start free trial"
+3. Complete the setup process
+4. 30 days of unlimited access to all features
+
+### Option C: Educational/Open Source Access
+
+**Students & Educators**:
+- Apply through [GitHub Education Pack](https://education.github.com)
+- Verification required for academic status
+- Full access while enrolled/teaching
+
+**Open Source Maintainers**:
+- Apply for free access if you maintain popular repositories
+- GitHub reviews applications case-by-case
+- Criteria based on project impact and community involvement
+
+## Step 2: Install the GitHub Copilot Extension
+
+## Step 2: Install the GitHub Copilot Extension
 
 1. Open Visual Studio Code
 2. Go to the Extensions view (\`Ctrl+Shift+X\` or \`Cmd+Shift+X\`)
 3. Search for "GitHub Copilot"
 4. Click "Install" on the official GitHub Copilot extension
 
-## Step 2: Sign in to GitHub
+## Step 3: Sign in to GitHub
 
 1. After installation, you'll see a notification to sign in
 2. Click "Sign in to GitHub"
 3. Your browser will open - authorize the application
 4. Return to VS Code when prompted
 
-## Step 3: Verify Installation
+## Step 4: Verify Installation
 
 Create a new file and start typing. You should see Copilot suggestions appear as gray text.
 
@@ -313,21 +391,65 @@ Antes de configurar Copilot, asegúrate de tener:
 - **Visual Studio Code**: Última versión instalada
 - **Suscripción Activa**: Suscripción a GitHub Copilot (prueba gratuita disponible)
 
-## Paso 1: Instalar la Extensión de GitHub Copilot
+## Paso 1: Elige Tu Plan de Acceso
+
+### Opción A: GitHub Copilot Gratuito (Solo VS Code)
+
+**Nuevo en 2025**: Comienza con el nivel gratuito en VS Code:
+
+1. Abre Visual Studio Code
+2. Ve a Extensiones (\`Ctrl+Shift+X\` o \`Cmd+Shift+X\`)
+3. Busca "GitHub Copilot"
+4. Instala la extensión
+5. Inicia sesión con tu cuenta de GitHub
+6. **No se requiere tarjeta de crédito** - automáticamente obtienes:
+   - 2,000 completados de código por mes
+   - 50 interacciones de chat por mes
+
+**Consejos para el Uso del Nivel Gratuito**:
+- Monitorea tu uso en la barra de estado de VS Code
+- Prioriza código complejo sobre completados simples
+- Usa el chat para aprender y depurar en lugar de preguntas básicas
+- Planifica el tiempo de actualización si te acercas a los límites
+
+### Opción B: Iniciar Prueba Gratuita (Todos los IDEs)
+
+Para acceso completo en todos los IDEs soportados:
+
+1. Visita [github.com/copilot](https://github.com/copilot)
+2. Haz clic en "Iniciar prueba gratuita"
+3. Completa el proceso de configuración
+4. 30 días de acceso ilimitado a todas las características
+
+### Opción C: Acceso Educativo/Código Abierto
+
+**Estudiantes y Educadores**:
+- Aplica a través del [GitHub Education Pack](https://education.github.com)
+- Verificación requerida para estado académico
+- Acceso completo mientras estés inscrito/enseñando
+
+**Mantenedores de Código Abierto**:
+- Aplica para acceso gratuito si mantienes repositorios populares
+- GitHub revisa las aplicaciones caso por caso
+- Criterios basados en el impacto del proyecto y participación comunitaria
+
+## Paso 2: Instalar la Extensión de GitHub Copilot
+
+## Paso 2: Instalar la Extensión de GitHub Copilot
 
 1. Abre Visual Studio Code
 2. Ve a la vista de Extensiones (\`Ctrl+Shift+X\` o \`Cmd+Shift+X\`)
 3. Busca "GitHub Copilot"
 4. Haz clic en "Instalar" en la extensión oficial de GitHub Copilot
 
-## Paso 2: Iniciar Sesión en GitHub
+## Paso 3: Iniciar Sesión en GitHub
 
 1. Después de la instalación, verás una notificación para iniciar sesión
 2. Haz clic en "Iniciar sesión en GitHub"
 3. Tu navegador se abrirá - autoriza la aplicación
 4. Regresa a VS Code cuando se te solicite
 
-## Paso 3: Verificar la Instalación
+## Paso 4: Verificar la Instalación
 
 Crea un nuevo archivo y comienza a escribir. Deberías ver las sugerencias de Copilot aparecer como texto gris.
 
@@ -774,6 +896,44 @@ code --list-extensions | grep copilot
 2. Clear VS Code authentication cache
 3. Check GitHub token permissions
 
+### Free Tier Limit Management (VS Code Free - 2025)
+
+**NEW**: Managing your monthly limits with GitHub Copilot Free
+
+**Symptoms**: Hitting monthly completion or chat limits
+
+**Monitoring Your Usage**:
+1. Check VS Code status bar for current usage
+2. View detailed usage: Command Palette → "GitHub Copilot: Check Usage"
+3. Monthly reset occurs on your signup anniversary date
+
+**Strategies to Optimize Limited Usage**:
+1. **Smart Completion Usage**:
+   - Use for complex logic rather than simple syntax
+   - Prioritize unfamiliar APIs or languages
+   - Skip completions for obvious code patterns
+
+2. **Efficient Chat Usage**:
+   - Ask comprehensive questions rather than multiple small ones
+   - Use for debugging complex issues, not basic syntax help
+   - Save chat for learning new concepts
+
+3. **Preparation for Limit Reset**:
+   - Plan complex projects around reset dates
+   - Document useful patterns Copilot suggests
+   - Consider upgrading before hitting limits on important deadlines
+
+**When You Hit the Limit**:
+- ❌ No "emergency" completions available
+- ❌ Cannot purchase additional usage
+- ✅ Can upgrade to paid plan instantly for unlimited access
+- ✅ Can continue using VS Code normally without AI assistance
+
+**Upgrade Timing Tips**:
+- Upgrade mid-month to get full month's usage immediately
+- Downgrade after paid month to return to free tier
+- Compare monthly productivity gains vs. $10 subscription cost
+
 ### Subscription and Licensing Issues
 
 **Symptoms**: "Copilot subscription expired" or access denied errors
@@ -915,6 +1075,44 @@ code --list-extensions | grep copilot
 1. Cerrar sesión y volver a iniciar: Paleta de Comandos → "GitHub Copilot: Sign Out"
 2. Limpiar caché de autenticación de VS Code
 3. Verificar permisos del token de GitHub
+
+### Gestión de Límites del Nivel Gratuito (VS Code Gratuito - 2025)
+
+**NUEVO**: Gestionar tus límites mensuales con GitHub Copilot Gratuito
+
+**Síntomas**: Alcanzar límites mensuales de completados o chat
+
+**Monitoreo de Tu Uso**:
+1. Verificar barra de estado de VS Code para uso actual
+2. Ver uso detallado: Paleta de Comandos → "GitHub Copilot: Check Usage"
+3. El reinicio mensual ocurre en la fecha de aniversario de tu registro
+
+**Estrategias para Optimizar Uso Limitado**:
+1. **Uso Inteligente de Completados**:
+   - Usar para lógica compleja en lugar de sintaxis simple
+   - Priorizar APIs o lenguajes desconocidos
+   - Omitir completados para patrones de código obvios
+
+2. **Uso Eficiente del Chat**:
+   - Hacer preguntas comprensivas en lugar de múltiples pequeñas
+   - Usar para depurar problemas complejos, no ayuda de sintaxis básica
+   - Reservar chat para aprender nuevos conceptos
+
+3. **Preparación para Reinicio de Límite**:
+   - Planificar proyectos complejos alrededor de fechas de reinicio
+   - Documentar patrones útiles que Copilot sugiere
+   - Considerar actualizar antes de alcanzar límites en fechas límite importantes
+
+**Cuando Alcanzas el Límite**:
+- ❌ No hay completados de "emergencia" disponibles
+- ❌ No se puede comprar uso adicional
+- ✅ Puedes actualizar al plan pago instantáneamente para acceso ilimitado
+- ✅ Puedes continuar usando VS Code normalmente sin asistencia de IA
+
+**Consejos de Tiempo de Actualización**:
+- Actualizar a mitad de mes para obtener uso completo del mes inmediatamente
+- Degradar después del mes pagado para regresar al nivel gratuito
+- Comparar ganancias de productividad mensual vs. costo de suscripción de $10
 
 ### Problemas de Suscripción y Licencias
 
