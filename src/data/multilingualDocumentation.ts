@@ -67,6 +67,55 @@ This documentation supports multiple languages to serve developers worldwide:
 
 <LanguagePreview />
 
+## GitHub Copilot Plans and Licensing
+
+Understanding GitHub Copilot's licensing model is crucial before getting started. GitHub offers different plans with varying features and limitations:
+
+### GitHub Copilot Individual (Free Trial + Paid)
+- **Free Trial**: 30-day free trial for new users
+- **Monthly Pricing**: $10/month after trial
+- **Features**: Full access to code completions, chat, and CLI assistance
+- **Usage Limits**: No specific token limits for regular usage
+- **Supported IDEs**: VS Code, Visual Studio, JetBrains IDEs, Neovim
+
+### GitHub Copilot Business
+- **Pricing**: $19/user/month
+- **Enterprise Features**: Organization-level policy management
+- **Enhanced Security**: Exclude public code suggestions
+- **Administrative Controls**: Usage analytics and policy settings
+
+### GitHub Copilot Enterprise
+- **Pricing**: $39/user/month
+- **Advanced Features**: Copilot knowledge bases, fine-tuning capabilities
+- **Integration**: Deep integration with GitHub repositories
+- **Personalization**: Custom models trained on your organization's code
+
+### Free Tier Limitations and Considerations
+
+**Important**: GitHub Copilot does not offer a permanent free tier. However, certain users may qualify for free access:
+
+- **Students**: Free access through GitHub Education Pack
+- **Open Source Maintainers**: Free access for verified maintainers of popular open source projects
+- **Free Trial**: 30-day trial for all new users
+
+**Token Usage and Rate Limits**:
+- GitHub Copilot doesn't use a traditional "token" system like other AI services
+- Instead, it operates on request-based limits to ensure fair usage
+- Heavy usage may be subject to rate limiting during peak times
+- Free trial users have the same technical capabilities as paid users during the trial period
+
+**What You Can Do During Free Trial**:
+✅ Generate code completions and suggestions  
+✅ Use Copilot Chat for code explanations  
+✅ Generate unit tests and documentation  
+✅ Access all supported programming languages  
+✅ Use in all supported IDEs  
+
+**After Free Trial Expires**:
+❌ No access to any Copilot features without subscription  
+❌ No "freemium" model with limited daily usage  
+❌ Must subscribe to continue using any Copilot functionality  
+
 Before we dive into the technical setup, let's understand what makes Copilot special:
 
 > GitHub Copilot doesn't just autocomplete - it understands context, intent, and coding patterns to provide meaningful suggestions that can significantly speed up your development workflow.`,
@@ -116,6 +165,55 @@ function calculateTotalPrice(items) {
 Esta documentación soporta múltiples idiomas para servir a desarrolladores de todo el mundo:
 
 <LanguagePreview />
+
+## Planes y Licencias de GitHub Copilot
+
+Entender el modelo de licencias de GitHub Copilot es crucial antes de comenzar. GitHub ofrece diferentes planes con características y limitaciones variadas:
+
+### GitHub Copilot Individual (Prueba Gratuita + Pago)
+- **Prueba Gratuita**: Prueba gratuita de 30 días para nuevos usuarios
+- **Precio Mensual**: $10/mes después de la prueba
+- **Características**: Acceso completo a completados de código, chat y asistencia CLI
+- **Límites de Uso**: Sin límites específicos de tokens para uso regular
+- **IDEs Soportados**: VS Code, Visual Studio, IDEs de JetBrains, Neovim
+
+### GitHub Copilot Business
+- **Precio**: $19/usuario/mes
+- **Características Empresariales**: Gestión de políticas a nivel organizacional
+- **Seguridad Mejorada**: Excluir sugerencias de código público
+- **Controles Administrativos**: Análisis de uso y configuración de políticas
+
+### GitHub Copilot Enterprise
+- **Precio**: $39/usuario/mes
+- **Características Avanzadas**: Bases de conocimiento de Copilot, capacidades de ajuste fino
+- **Integración**: Integración profunda con repositorios de GitHub
+- **Personalización**: Modelos personalizados entrenados en el código de tu organización
+
+### Limitaciones y Consideraciones del Nivel Gratuito
+
+**Importante**: GitHub Copilot no ofrece un nivel gratuito permanente. Sin embargo, ciertos usuarios pueden calificar para acceso gratuito:
+
+- **Estudiantes**: Acceso gratuito a través del GitHub Education Pack
+- **Mantenedores de Código Abierto**: Acceso gratuito para mantenedores verificados de proyectos populares de código abierto
+- **Prueba Gratuita**: Prueba de 30 días para todos los nuevos usuarios
+
+**Uso de Tokens y Límites de Velocidad**:
+- GitHub Copilot no usa un sistema tradicional de "tokens" como otros servicios de IA
+- En su lugar, opera con límites basados en solicitudes para asegurar un uso justo
+- El uso intensivo puede estar sujeto a limitación de velocidad durante horas pico
+- Los usuarios de prueba gratuita tienen las mismas capacidades técnicas que los usuarios de pago durante el período de prueba
+
+**Lo Que Puedes Hacer Durante la Prueba Gratuita**:
+✅ Generar completados y sugerencias de código  
+✅ Usar Copilot Chat para explicaciones de código  
+✅ Generar pruebas unitarias y documentación  
+✅ Acceder a todos los lenguajes de programación soportados  
+✅ Usar en todos los IDEs soportados  
+
+**Después de que Expire la Prueba Gratuita**:
+❌ Sin acceso a ninguna característica de Copilot sin suscripción  
+❌ No hay modelo "freemium" con uso diario limitado  
+❌ Debes suscribirte para continuar usando cualquier funcionalidad de Copilot  
 
 Antes de sumergirnos en la configuración técnica, entendamos qué hace especial a Copilot:
 
@@ -174,7 +272,35 @@ Access Copilot settings through:
 
 - **Enable/Disable**: Toggle Copilot on/off
 - **Inline Suggestions**: Control suggestion visibility
-- **Language Specific**: Configure per programming language`,
+- **Language Specific**: Configure per programming language
+
+## Maximizing Your Free Trial
+
+If you're using the 30-day free trial, here are tips to get the most value:
+
+### Smart Usage Strategies
+- **Focus on Learning**: Use the trial period to understand how Copilot works with your coding style
+- **Try Different Languages**: Experiment with various programming languages to see Copilot's versatility
+- **Explore Features**: Test code completion, chat, explanations, and documentation generation
+- **Document Patterns**: Note which types of suggestions work best for your projects
+
+### Trial Period Best Practices
+- **Set Clear Goals**: Define what you want to achieve during the trial
+- **Daily Usage**: Use Copilot regularly to understand its full potential
+- **Compare Productivity**: Measure your coding speed and accuracy with and without Copilot
+- **Team Evaluation**: If evaluating for a team, gather feedback from multiple developers
+
+### Planning for Post-Trial
+- **Budget Planning**: Factor the monthly cost into your development budget
+- **ROI Assessment**: Calculate time saved vs. subscription cost
+- **Team Discussion**: Discuss adoption with your team before trial expires
+- **Alternative Evaluation**: Compare with other AI coding assistants if needed
+
+### Usage Monitoring
+While there are no strict token limits, be mindful of:
+- **Heavy Usage**: Avoid excessive requests in short periods
+- **Network Latency**: Some suggestions may be slower during peak times
+- **Context Quality**: Provide clear, well-structured code for better suggestions`,
       es: `# Configuración de GitHub Copilot
 
 Esta sección te guiará a través del proceso completo de configuración de GitHub Copilot en Visual Studio Code.
@@ -220,7 +346,35 @@ Accede a las configuraciones de Copilot a través de:
 
 - **Habilitar/Deshabilitar**: Activar/desactivar Copilot
 - **Sugerencias en Línea**: Controlar la visibilidad de sugerencias
-- **Específico por Lenguaje**: Configurar por lenguaje de programación`
+- **Específico por Lenguaje**: Configurar por lenguaje de programación
+
+## Maximizando Tu Prueba Gratuita
+
+Si estás usando la prueba gratuita de 30 días, aquí tienes consejos para obtener el máximo valor:
+
+### Estrategias de Uso Inteligente
+- **Enfócate en Aprender**: Usa el período de prueba para entender cómo funciona Copilot con tu estilo de codificación
+- **Prueba Diferentes Lenguajes**: Experimenta con varios lenguajes de programación para ver la versatilidad de Copilot
+- **Explora Características**: Prueba completado de código, chat, explicaciones y generación de documentación
+- **Documenta Patrones**: Nota qué tipos de sugerencias funcionan mejor para tus proyectos
+
+### Mejores Prácticas del Período de Prueba
+- **Establece Metas Claras**: Define qué quieres lograr durante la prueba
+- **Uso Diario**: Usa Copilot regularmente para entender su potencial completo
+- **Compara Productividad**: Mide tu velocidad y precisión de codificación con y sin Copilot
+- **Evaluación de Equipo**: Si evalúas para un equipo, reúne retroalimentación de múltiples desarrolladores
+
+### Planificación Post-Prueba
+- **Planificación de Presupuesto**: Incluye el costo mensual en tu presupuesto de desarrollo
+- **Evaluación de ROI**: Calcula el tiempo ahorrado vs. el costo de suscripción
+- **Discusión de Equipo**: Discute la adopción con tu equipo antes de que expire la prueba
+- **Evaluación de Alternativas**: Compara con otros asistentes de codificación IA si es necesario
+
+### Monitoreo de Uso
+Aunque no hay límites estrictos de tokens, ten en cuenta:
+- **Uso Intensivo**: Evita solicitudes excesivas en períodos cortos
+- **Latencia de Red**: Algunas sugerencias pueden ser más lentas durante horas pico
+- **Calidad del Contexto**: Proporciona código claro y bien estructurado para mejores sugerencias`
     }
   },
   {
@@ -620,6 +774,51 @@ code --list-extensions | grep copilot
 2. Clear VS Code authentication cache
 3. Check GitHub token permissions
 
+### Subscription and Licensing Issues
+
+**Symptoms**: "Copilot subscription expired" or access denied errors
+
+**Solutions**:
+1. **Check Subscription Status**:
+   - Go to GitHub.com → Settings → Copilot
+   - Verify your subscription is active
+   - Check payment method if subscription failed
+
+2. **Free Trial Expired**:
+   - Subscribe to a paid plan to continue using Copilot
+   - No free tier available after trial period
+   - Student discounts available through GitHub Education
+
+3. **Organization Licensing**:
+   - Contact your organization admin for Copilot Business/Enterprise access
+   - Verify you're part of the correct GitHub organization
+   - Check if organization policies allow Copilot usage
+
+4. **Rate Limiting Issues**:
+   - Wait a few minutes if experiencing temporary slowdowns
+   - Heavy usage during peak hours may cause delays
+   - Consider upgrading to Business/Enterprise for priority access
+
+### Usage Optimization During Trial
+
+**Symptoms**: Want to maximize trial value
+
+**Solutions**:
+1. **Track Usage Patterns**:
+   - Note which features provide most value
+   - Document time savings for ROI calculation
+   - Test with different programming languages
+
+2. **Performance Monitoring**:
+   - Monitor suggestion quality across different contexts
+   - Compare productivity with and without Copilot
+   - Evaluate team collaboration benefits
+
+3. **Trial Extension Options**:
+   - Students can get free access through GitHub Education Pack
+   - Open source maintainers may qualify for free access
+   - Contact GitHub for enterprise trial extensions if needed
+
 ### Poor Suggestion Quality
 
 **Symptoms**: Irrelevant or incorrect suggestions
@@ -716,6 +915,51 @@ code --list-extensions | grep copilot
 1. Cerrar sesión y volver a iniciar: Paleta de Comandos → "GitHub Copilot: Sign Out"
 2. Limpiar caché de autenticación de VS Code
 3. Verificar permisos del token de GitHub
+
+### Problemas de Suscripción y Licencias
+
+**Síntomas**: Errores de "Suscripción de Copilot expirada" o acceso denegado
+
+**Soluciones**:
+1. **Verificar Estado de Suscripción**:
+   - Ir a GitHub.com → Configuración → Copilot
+   - Verificar que tu suscripción esté activa
+   - Revisar método de pago si la suscripción falló
+
+2. **Prueba Gratuita Expirada**:
+   - Suscribirse a un plan de pago para continuar usando Copilot
+   - No hay nivel gratuito disponible después del período de prueba
+   - Descuentos para estudiantes disponibles a través de GitHub Education
+
+3. **Licencias Organizacionales**:
+   - Contactar al administrador de tu organización para acceso a Copilot Business/Enterprise
+   - Verificar que seas parte de la organización correcta de GitHub
+   - Revisar si las políticas de la organización permiten el uso de Copilot
+
+4. **Problemas de Limitación de Velocidad**:
+   - Esperar unos minutos si experimentas ralentizaciones temporales
+   - El uso intensivo durante horas pico puede causar retrasos
+   - Considerar actualizar a Business/Enterprise para acceso prioritario
+
+### Optimización de Uso Durante la Prueba
+
+**Síntomas**: Querer maximizar el valor de la prueba
+
+**Soluciones**:
+1. **Rastrear Patrones de Uso**:
+   - Notar qué características proporcionan más valor
+   - Documentar ahorros de tiempo para cálculo de ROI
+   - Probar con diferentes lenguajes de programación
+
+2. **Monitoreo de Rendimiento**:
+   - Monitorear calidad de sugerencias en diferentes contextos
+   - Comparar productividad con y sin Copilot
+   - Evaluar beneficios de colaboración en equipo
+
+3. **Opciones de Extensión de Prueba**:
+   - Los estudiantes pueden obtener acceso gratuito a través del GitHub Education Pack
+   - Los mantenedores de código abierto pueden calificar para acceso gratuito
+   - Contactar a GitHub para extensiones de prueba empresarial si es necesario
 
 ### Calidad Pobre de Sugerencias
 
