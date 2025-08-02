@@ -69,32 +69,6 @@ export function ContentRenderer({ content }: ContentRendererProps) {
         } else {
           // Handle custom components with a simpler approach
           if (text.includes('<InteractiveQuiz />') || text.includes('<LanguagePreview />')) {
-            const parts = text
-              .split('<InteractiveQuiz />')
-              .flatMap(part => part.split('<LanguagePreview />'))
-              .map((part, index) => {
-                // Check what component should come before this text part
-                const originalText = text
-                const beforeQuiz = originalText.split('<InteractiveQuiz />')[0]
-                const beforePreview = originalText.split('<LanguagePreview />')[0]
-                
-                if (index === 0) {
-                  return { type: 'text', content: part }
-                } else {
-                  // Determine which component should be inserted based on position
-                  const precedingText = parts.slice(0, index).reduce((acc, p) => acc + (p.content || ''), '')
-                  if (originalText.indexOf('<InteractiveQuiz />') > -1 && 
-                      precedingText.length >= beforeQuiz.length && 
-                      precedingText.length < beforeQuiz.length + '<InteractiveQuiz />'.length) {
-                    return { type: 'quiz', content: part }
-                  } else if (originalText.indexOf('<LanguagePreview />') > -1 && 
-                             precedingText.length >= beforePreview.length) {
-                    return { type: 'preview', content: part }
-                  }
-                  return { type: 'text', content: part }
-                }
-              })
-
             // Simple split approach
             let content = text
             const elements_local: JSX.Element[] = []
