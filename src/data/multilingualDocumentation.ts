@@ -2185,7 +2185,7 @@ C) Declaraciones de variables
 D) Declaraciones de import
 
 ### Pregunta 3
-¿Cómo puedes obtener múltiples sugerencias para el mismo código?
+��Cómo puedes obtener múltiples sugerencias para el mismo código?
 
 A) Presionar Tab múltiples veces
 B) Usar Ctrl+Enter (Cmd+Enter)
